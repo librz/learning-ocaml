@@ -35,7 +35,7 @@ let add = ( + );;
 
 syntax: `f @@ x = f x`
 
-```
+```ocaml
 succ 2 * 10;;  (* this won't work *)
 succ (2 * 10);; (* need grouping *)
 (* or we could use the application operator *)
