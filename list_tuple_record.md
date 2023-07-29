@@ -36,7 +36,7 @@ print_int (sum pair);;
 
 ### record syntax
 
-records is a compound type with named fields
+records is a compound type with named fields (order of fields is irrelevant)
 
 ```ocaml
 (* define record type *)
