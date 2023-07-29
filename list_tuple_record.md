@@ -13,6 +13,8 @@ all elments in a list must have the same type
 
 ### tuple syntax:
 
+tuple is just a bundle of elments(can be of different type) gruoped together and allow access by position
+
 - `()` is the empty tuple (also known as "unit")
 - `let pair = (1, "two")`
 - with type annotation: `let pair: int * string = (1, "two")`
@@ -34,7 +36,7 @@ print_int (sum pair);;
 
 ### record syntax
 
-records is a compund type with named fields
+records is a compound type with named fields
 
 ```ocaml
 (* define record type *)
