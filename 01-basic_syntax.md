@@ -55,3 +55,19 @@ let rec fib x =
   if x = 1 || x = 2 then 1
   else fib (x - 1) + fib (x - 2)
 ```
+
+### printing
+
+```ocaml
+(* print by type *)
+print_string "hi";;
+print_int 10;;
+
+(* print with newline *)
+print_endline "";;
+print_endline "hi";;
+
+(* format using Printf.sprintf *)
+let str = Printf.sprintf "%s is %i years old" "Patrick" 27;;
+print_endline str;;
+```
