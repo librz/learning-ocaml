@@ -1,4 +1,3 @@
-
 ### list syntax:
 
 all elments in a list must have the same type
@@ -18,6 +17,9 @@ all elments in a list must have the same type
 - `let pair = (1, "two")`
 - with type annotation: `let pair: int * string = (1, "two")`
 - detuple: `let (first, second) = pair`
+- get first value in a pair: `fst pair`
+- get second value in a pair: `snd pair`
+- both `fst` & `snd` can be only used on tuple with exactly two elements
 
 fun fact, functions in OCaml can have at most one argument:
 
@@ -29,3 +31,33 @@ let pair = (1, 2);;
 let sum (a, b) =  a + b;;
 print_int (sum pair);;
 ```
+
+### record syntax
+
+records is a compund type with named fields
+
+```ocaml
+(* define record type *)
+type student = {
+    name : string;
+    year : int; (* grad year *)
+}
+
+(* define record instance *)
+let ruth = {
+    name = "Ruth Bader",
+    year = 1954
+};;
+
+print_string ruth.name; print_string " graduated in "; print_int ruth.year; print_endline "";;
+```
+
+### how to choose between list, tuple & record?
+
+```ocaml
+if length is bounded then use list
+else if access by name then use record
+else if access by position then use tuple
+else use other data type
+```
+
