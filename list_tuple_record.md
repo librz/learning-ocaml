@@ -47,11 +47,22 @@ type student = {
 
 (* define record instance *)
 let ruth = {
-    name = "Ruth Bader",
-    year = 1954
+    name = "Ruth Bader";
+    year = 1954;
 };;
 
-print_string ruth.name; print_string " graduated in "; print_int ruth.year; print_endline "";;
+
+(* record copy *)
+let raj = {ruth with name = "Raj Smith"};;
+
+let print_student (s: student) = 
+    print_string s.name; 
+    print_string " graduated in ";
+    print_int s.year;
+    print_endline "";;
+
+print_student ruth;;
+print_student raj;;
 ```
 
 ### how to choose between list, tuple & record?
