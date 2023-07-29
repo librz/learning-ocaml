@@ -52,7 +52,7 @@ let ruth = {
 };;
 
 
-(* record copy *)
+(* record copy using "with" *)
 let raj = {ruth with name = "Raj Smith"};;
 
 let print_student (s: student) = 
