@@ -1,5 +1,9 @@
 ### partial application
 
+fact: multi-argument functions do not exist in OCaml
+
+`fun x y -> e` is syntactic sugar for: `fun x -> (fun y -> e)`
+
 example: 
 
 ```ocaml
@@ -8,17 +12,11 @@ let add2 = sum 2;;
 print_int (add2 3);;
 ```
 
-fact: multi-argument functions do not exist in OCaml
-
-`fun x y -> e` is syntactic sugar for: `fun x -> (fun y -> e)`
-
 ### parametric polymorphism
 
 poly = many, morph = form
 
-write function that works for many arguments regardless of their type
-
-closely related to Java generics
+write function that works for many arguments regardless of their type (you may recognize this as generics in programming langs such as Java & TypeScript)
 
 example: `let id x = x`, `x` can be of any type
 
@@ -29,7 +27,6 @@ example: `let id x = x`, `x` can be of any type
 ( * ) 2 3;;
 let add = ( + );;
 ```
-
 
 ### application operator(@@)
 
@@ -51,3 +48,4 @@ let square x = x * x
 succ (square (succ 5));; (* this works but too many parenthesis *)
 5 |> succ |> square |> succ;; (* using pipeline operator is much clearly *)
 ```
+
