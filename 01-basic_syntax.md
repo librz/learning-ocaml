@@ -27,22 +27,44 @@
 
 ### anonymous function(lambda):
 
-- define: `fun x -> x + 1`
-- execute: `(fun x -> x + 1) 2`
-- multiple parameters: `(fun x y -> x + y) 3 4`
+```ocaml
+(* define *)
+fun x -> x + 1
+
+(* IIFE *)
+(fun x -> x + 1) 2
+
+(* no argument *) 
+(fun () -> print_endline "Hi") ()
+
+(* multiple arguments *) 
+(fun x y -> x + y) 3 4
+```
 
 substitution: `(fun x -> x + 1) 2` is semantically equivalent to: `let x = 2 in x + 1`
 
 ### named function:
 
-- define: `let inc = fun x -> x + 1`
-- syntatic sugar: `let inc x = x + 1`
-- multiple parameters: `let sum x y = x + y`
+```ocaml
+(* define *)
+let inc = fun x -> x + 1
+
+(* syntatic sugar *)
+let inc x = x + 1
+
+(* define a function that do not need argument *)
+let hau () = print_endline "How are you?"
+
+(* define a function that needs multiple arguments *)
+let sum x y = x + y
+```
 
 define an inline function & use it: 
 
-- `let f = fun x y -> x + y in f 1 3`
-- `let f x y = x + y in f 3 2`
+```ocaml
+let f = fun x y -> x + y in f 1 3
+let f x y = x + y in f 3 2
+```
 
 ### recursive function (`rec` keyword)
 
