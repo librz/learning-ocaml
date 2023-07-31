@@ -86,10 +86,11 @@ print_string "hi";;
 print_int 10;;
 
 (* print with newline *)
+print_newline ();;
 print_endline "";;
+Printf.printf "\n";;
 print_endline "hi";;
 
-(* format using Printf.sprintf *)
-let str = Printf.sprintf "%s is %i years old" "Patrick" 27;;
-print_endline str;;
+(* format using Printf.printf *)
+Printf.printf "%s is %i years old\n" "Patrick" 27;;
 ```
