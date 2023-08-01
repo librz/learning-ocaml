@@ -13,11 +13,11 @@ opam --version
 
 first program:
 
-- first: create a file named hello.ml, with a line of code such as: print_string "Hello World!\n";;
-- then: compile the code using ocamlc: ocamlc -o hello hello.ml
-- should generate a file named hello, run it: ./hello
+- first: create a file named hello.ml, with a line of code such as: `print_string "Hello World!\n";;`
+- then: compile the code using ocamlc: `ocamlc -o hello hello.ml`
+- should generate a file named hello, run it: `./hello`
 
 use REPL:
 
-- enter REPL: ocaml
-- quit REPL: Ctrl + D
+- enter REPL: `ocaml`
+- quit REPL: `Ctrl + D` or type `#quit;;`
