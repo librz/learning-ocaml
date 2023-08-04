@@ -124,7 +124,7 @@ Printf.printf "%s is %i years old.\n" name age;;
 
 ### The "function" Keyword
 
-Because pattern matching is so often used in function body, OCaml provides `function` keyword as a syntactic sugar for pattern matching inside function:
+Because pattern matching is so frequently used in function body, OCaml provides `function` keyword as a syntactic sugar for pattern matching inside function:
 
 ```ocaml
 let rec getlen l =
