@@ -1,4 +1,4 @@
-### basic syntax
+### Basic Syntax
 
 ```ocaml 
 (* simple pattern matching *)
@@ -19,7 +19,7 @@ let rec fib x =
 Printf.printf "%i\n" (fib 5);;k
 ```
 
-### with guards
+### With Guards
 
 ```ocaml
 (* pattern matching with guards *)
@@ -39,10 +39,10 @@ Printf.printf "exam grade is %i, " exam_grade;;
 Printf.printf "exam result is %s\n" (exam_result exam_grade);;
 ```
 
-### match compound data type
+### Match Compound Data Type
 
 ```ocaml
-(* list pattern matching *)
+(* match list *)
 let rec getlen l =
   match l with
   | [] -> 0 (* must include this, put correctness aside, the compiler will complain if pattern matching is not exhaustive *)
@@ -50,7 +50,7 @@ let rec getlen l =
 
 Printf.printf "%i\n" (getlen [13;45;78]);;
 
-(* record pattern matching *)
+(* match record *)
 type student = {
   name: string;
   age: int;
@@ -63,6 +63,46 @@ let stringify_student (s: student) =
 let lisa: student = { name = "Lisa"; age = 10 }
 
 print_endline (stringify_student lisa);;
+
+(* match variants *)
+type primary_color = Red | Green | Blue;;
+
+let r = Red;;
+
+type point = float * float;;
+
+let print_point (p: point) =
+  match p with
+  | (x, y) -> Printf.printf "(%f, %f)\n" x y;;
+
+type shape =
+    | Circle of { center : point; radius : float }
+    | Rectangle of { lower_left : point; upper_right : point }
+
+let center (s: shape): point =
+    match s with
+    | Circle c -> c.center
+    | Rectangle { lower_left; upper_right } ->
+        let (urx, ury)  = upper_right in
+        let (llx, lly) = lower_left in (
+          llx +. ((urx -. llx) /. 2.),
+          lly +. ((ury -. lly) /. 2.)
+        );;
+
+let c1 = Circle { center = (0., 0.); radius = 1. };;
+
+let r1 = Rectangle {
+    lower_left = (-1., -1.);
+    upper_right = (1., 1.)
+};;
+
+let coc1 = center c1;;
+
+let cor1 = center r1;;
+
+print_point coc1;;
+
+print_point cor1;;
 ```
 
 ### Pattern Matching with Let
@@ -82,7 +122,7 @@ let { name; age } = lisa;;
 Printf.printf "%s is %i years old.\n" name age;;
 ```
 
-### the "function" keyword
+### The "function" Keyword
 
 Because pattern matching is so often used in function body, OCaml provides `function` keyword as a syntactic sugar for pattern matching inside function:
 
